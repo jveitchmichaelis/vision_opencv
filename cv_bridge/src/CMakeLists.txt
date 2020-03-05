@@ -21,9 +21,9 @@ if(NOT PYTHON_NUMPY_INCLUDE_DIR)
     if(PYTHON_NUMPY_PROCESS EQUAL 0)
        file(TO_CMAKE_PATH "${PYTHON_NUMPY_INCLUDE_DIR}" PYTHON_NUMPY_INCLUDE_CMAKE_PATH)
        set(PYTHON_NUMPY_INCLUDE_DIR ${PYTHON_NUMPY_INCLUDE_CMAKE_PATH} CACHE PATH "Numpy include directory")
-    else(PYTHON_NUMPY_PROCESS EQUAL 0)
+    else
         message(SEND_ERROR "Could not determine the NumPy include directory, verify that NumPy was installed correctly.")
-    endif(PYTHON_NUMPY_PROCESS EQUAL 0)
+    endif
  endif(NOT PYTHON_NUMPY_INCLUDE_DIR)
 
 include_directories(${PYTHON_INCLUDE_PATH} ${Boost_INCLUDE_DIRS} ${PYTHON_NUMPY_INCLUDE_DIR})
